@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'playfair': ["Playfair Display", "serif"],
+        'mulish': ["Mulish", "sans-serif"]
+      }
+    },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require('daisyui'),],
 }
