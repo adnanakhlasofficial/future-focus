@@ -5,14 +5,14 @@ const Navbar = () => {
     <div className="bg-blue-900 ">
       <div className="wrapper grid grid-cols-3 items-center py-3">
         <div>
-          <h1 className="font-playfair text-4xl font-bold">Future Focus</h1>
+          <h1 className="font-playfair text-4xl font-bold text-blue-gray">Future Focus</h1>
         </div>
         <div className="place-self-center">
           <ul className="flex gap-3">
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-red-500" : "text-blue-500"
+                  isActive ? "text-primary font-semibold" : "text-gray font-semibold"
                 }
                 to="/"
               >
@@ -22,7 +22,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-red-500" : "text-blue-500"
+                  isActive ? "text-primary font-semibold" : "text-gray font-semibold"
                 }
                 to="/services"
               >
@@ -32,7 +32,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-red-500" : "text-blue-500"
+                  isActive ? "text-primary font-semibold" : "text-gray font-semibold"
                 }
                 to="/contacts"
               >
@@ -42,7 +42,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "text-red-500" : "text-blue-500"
+                  isActive ? "text-primary font-semibold" : "text-gray font-semibold"
                 }
                 to="/profile"
               >

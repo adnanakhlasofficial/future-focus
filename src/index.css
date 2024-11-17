@@ -8,4 +8,10 @@
   .wrapper {
     @apply container mx-auto w-3/4 max-w-[90rem];
   }
+  .heading {
+    @apply font-playfair text-base-100 text-4xl font-bold;
+  }
+  .desc {
+    @apply font-mulish text-base-300 text-xl;
+  }
 }
