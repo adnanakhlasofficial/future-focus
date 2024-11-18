@@ -1,8 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
 const ServiceCard = ({ service }) => {
   const {
+    id,
     image,
     serviceName,
     category,
@@ -20,11 +21,17 @@ const ServiceCard = ({ service }) => {
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
-        <img src={image} alt={serviceName} className="h-60 w-full object-cover" />
+        <img
+          src={image}
+          alt={serviceName}
+          className="h-60 w-full object-cover"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{serviceName}</h2>
-        <p className="text-sm text-gray-500">{category} | Rating: ⭐{rating}</p>
+        <p className="text-gray-500 itece flex gap-2 text-sm">
+          {category} session
+        </p>
         <p className="mt-2">{description}</p>
         <p className="mt-2">
           <strong>Price:</strong> {pricing}
@@ -35,17 +42,19 @@ const ServiceCard = ({ service }) => {
         <p>
           <strong>Counselor:</strong> {counselor}
         </p>
-        <p>
-          <strong>Location:</strong> {location}
+        <p className="flex items-center gap-2">
+          <strong>Rating:</strong>
+          <ReactStars
+            count={5}
+            edit={false}
+            value={rating}
+            size={24}
+            activeColor="#ffd700"
+          />{" "}
+          {rating}
         </p>
-        <p>
-          <strong>Age Group:</strong> {ageGroup}
-        </p>
-        <p>
-          <strong>Skills Covered:</strong> {skillsCovered.join(", ")}
-        </p>
-        <div className="card-actions justify-end mt-4">
-          <Link to={learnMore}>
+        <div className="card-actions mt-4 justify-end">
+          <Link to={`/service-details/${id}`}>
             <button className="btn btn-primary">Learn More</button>
           </Link>
         </div>
