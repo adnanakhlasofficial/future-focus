@@ -7,13 +7,13 @@ const Navbar = () => {
 
   return (
     <div className="font-mulish">
-      <div className="wrapper grid grid-cols-3 items-center py-3">
+      <div className="wrapper flex flex-col lg:flex-row justify-between items-center gap-4 py-3">
         <div>
           <h1 className="font-playfair text-4xl font-bold text-blue-gray">
             Future Focus
           </h1>
         </div>
-        <div className="place-self-center">
+        <div>
           <ul className="flex gap-3">
             <li>
               <NavLink
@@ -65,7 +65,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="self-center justify-self-end">
+        <div className="lg:self-center lg:justify-self-end">
           {user && user?.email ? (
             <div>
               <button onClick={logoutUser}>
@@ -77,7 +77,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link className="btn-main" to="/login">
+            <Link className="btn-main block" to="/login">
               Login
             </Link>
           )}

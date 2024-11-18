@@ -30,7 +30,7 @@ const ServiceCard = ({ service }) => {
           className="h-60 w-full object-cover"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body p-6">
         <h2 className="card-title">{serviceName}</h2>
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session

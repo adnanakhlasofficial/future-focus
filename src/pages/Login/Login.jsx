@@ -22,7 +22,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
-        navigate(state ? state : "/");
+        // navigate(state ? state : "/");
       })
       .catch((error) => {
         alert(error.code);
@@ -33,7 +33,8 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         setUser(result.user);
-        navigate(state ? state : "/");
+        // navigate(state ? state : "/");
+        console.log("state", state);
       })
       .catch((error) => {
         alert(error.code);

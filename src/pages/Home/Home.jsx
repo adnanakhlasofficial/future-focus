@@ -11,7 +11,7 @@ const Home = () => {
 
       <section className="wrapper space-y-8">
         <h2 className="section-title">Services</h2>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {services.slice(0, 6).map((service) => (
             <ServiceCard service={service} key={service.id}></ServiceCard>
           ))}

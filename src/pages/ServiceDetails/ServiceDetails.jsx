@@ -37,7 +37,7 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="wrapper space-y-12 py-24">
+    <div className="wrapper space-y-12 py-10">
       <div className="card rounded-lg bg-base-100 shadow-xl">
         <figure>
           <img
