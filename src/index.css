@@ -4,23 +4,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .form-input {
+    @apply w-full rounded-md px-4 py-2 focus:border-primary focus:outline-primary;
+  }
+  .btn-main {
+    @apply rounded-lg border-2 border-primary px-4 py-2 font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-slate-100;
+  }
+  .link-deactive {
+    @apply font-semibold text-gray hover:text-primary;
+  }
+  .link-active {
+    @apply font-bold text-primary;
+  }
+}
+
 @layer utilities {
   .wrapper {
     @apply container mx-auto w-3/4 max-w-[90rem];
   }
   .heading {
-    @apply font-playfair text-base-100 text-4xl font-bold;
+    @apply font-playfair text-4xl font-bold text-base-100;
   }
   .desc {
-    @apply font-mulish text-base-300 text-xl;
+    @apply font-mulish text-xl text-base-300;
   }
-  .section-title{
-    @apply font-playfair text-4xl font-bold text-center drop-shadow-lg shadow-blue-800;
+  .section-title {
+    @apply text-center font-playfair text-4xl font-bold shadow-blue-800 drop-shadow-lg;
   }
   .footer-title {
-    @apply text-6xl text-white font-playfair
+    @apply font-playfair text-6xl text-white;
   }
   .footer-desc {
-    @apply text-lg text-white font-mulish uppercase
+    @apply font-mulish text-lg uppercase text-white;
   }
 }

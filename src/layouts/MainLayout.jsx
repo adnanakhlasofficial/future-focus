@@ -5,10 +5,10 @@ import Navbar from "../components/Navbar/Navbar";
 const MainLayout = () => {
   return (
     <>
-      <header>
+      <header className="bg-slate-100">
         <Navbar></Navbar>
       </header>
-      <main className="min-h-[calc(100vh-144px)]">
+      <main className="min-h-[calc(100vh-144px)] bg-slate-100">
         <Outlet></Outlet>
       </main>
       <footer>

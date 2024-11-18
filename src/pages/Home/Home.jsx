@@ -6,7 +6,7 @@ const Home = () => {
   const services = useLoaderData();
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 pb-24">
       <BannerSlider></BannerSlider>
 
       <section className="wrapper space-y-8">
@@ -17,7 +17,7 @@ const Home = () => {
           ))}
         </div>
         <div className="grid place-items-center">
-          <Link to="/services" className="btn-primary btn text-center ">View All</Link>
+          <Link to="/services" className="btn-main w-40 text-center ">View All</Link>
         </div>
       </section>
     </div>

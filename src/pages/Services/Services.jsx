@@ -7,7 +7,7 @@ const Services = () => {
   console.log(data);
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 pb-24">
       <Banner
         title={"Services"}
         desc={"Get All you Service"}

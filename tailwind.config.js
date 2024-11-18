@@ -10,6 +10,7 @@ export default {
         'primary': "#6C63FF",
         'blue-gray': "#161617",
         'gray': "#6E7072",
+        'deep-black': "#111111"
       },
       backgroundImage: {
         'interview': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/interview.webp')",

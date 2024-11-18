@@ -33,12 +33,12 @@ const ServiceDetails = () => {
     console.log(comment);
     setComments(allComments);
 
-    e.target.feedback.value = ""
+    e.target.feedback.value = "";
   };
 
   return (
-    <div className="wrapper space-y-12">
-      <div className="card mt-24 bg-base-100 shadow-xl">
+    <div className="wrapper space-y-12 py-24">
+      <div className="card rounded-lg bg-base-100 shadow-xl">
         <figure>
           <img
             src={image}
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
             className="h-full w-full object-cover"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body space-y-2">
           <h2 className="card-title">{serviceName}</h2>
           <p className="text-gray-500 text-sm">
             {category} | Rating: ⭐{rating}
@@ -70,23 +70,23 @@ const ServiceDetails = () => {
           <p>
             <strong>Skills Covered:</strong> {skillsCovered.join(", ")}
           </p>
-        </div>
-      </div>
 
-      <div>
-        <form onSubmit={handleFeedback} className="space-y-4">
-          <textarea
-            name="feedback"
-            className="textarea textarea-bordered h-64 w-full resize-none focus:border-black focus:outline-none"
-            placeholder="Share Your feedback with us"
-          ></textarea>
-          <button className="btn btn-primary w-full">Submit</button>
-        </form>
+        <div className="mt-5">
+          <form onSubmit={handleFeedback} className="space-y-4">
+            <textarea
+              name="feedback"
+              className="textarea textarea-bordered h-64 w-full resize-none focus:border-primary focus:outline-none"
+              placeholder="Share Your feedback with us"
+            ></textarea>
+            <button className="btn-main w-full">Submit</button>
+          </form>
+        </div>
+        </div>
       </div>
 
       <div className="space-y-2">
         {comments.map((comment, idx) => (
-          <div key={idx} className="border-2 p-4 rounded-lg space-y-2">
+          <div key={idx} className="space-y-2 rounded-lg border-2 p-4">
             <h2 className="text-xl font-medium">{user.displayName}</h2>
             <p>{comment}</p>
           </div>

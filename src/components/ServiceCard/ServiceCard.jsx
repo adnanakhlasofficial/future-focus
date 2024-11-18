@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const ServiceCard = ({ service }) => {
   const {
@@ -19,7 +22,7 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card rounded-lg bg-base-100 shadow-xl" data-aos="zoom-in-down">
       <figure>
         <img
           src={image}
@@ -53,9 +56,9 @@ const ServiceCard = ({ service }) => {
           />{" "}
           {rating}
         </p>
-        <div className="card-actions mt-4 justify-end">
-          <Link to={`/service-details/${id}`}>
-            <button className="btn btn-primary">Learn More</button>
+        <div className="card-actions mt-4 w-full">
+          <Link className="w-full" to={`/service-details/${id}`}>
+            <button className="btn-main block !w-full">Learn More</button>
           </Link>
         </div>
       </div>
