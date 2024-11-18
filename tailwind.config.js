@@ -12,9 +12,9 @@ export default {
         'gray': "#6E7072",
       },
       backgroundImage: {
-        'interview': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/interview.webp')",
-        'resume': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/resume.webp')",
-        'recruitment': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/recruitment.webp')",
+        'interview': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/interview.webp')",
+        'resume': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/resume.webp')",
+        'recruitment': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/recruitment.webp')",
       },
       fontFamily: {
         'playfair': ["Playfair Display", "serif"],

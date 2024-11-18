@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex min-h-[calc(100vh-144px)] items-center justify-center">
       <div className="max-w-xl bg-slate-300 p-4">
         <h2 className="mb-6">Login</h2>
         <form onSubmit={handleLogin} className="space-y-3">
