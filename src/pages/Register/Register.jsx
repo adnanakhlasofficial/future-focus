@@ -1,75 +1,86 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
+  const { createNewUser, updateUserProfile, logoutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{6,}$/;
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.target);
+    const displayName = form.get("displayName");
+    const photoURL = form.get("photoURL");
+    const email = form.get("email");
+    const passsword = form.get("password");
+    const confirmPassword = form.get("confirm-password");
+
+    console.log({ displayName, photoURL, email, passsword, confirmPassword });
+
+    if (passsword !== confirmPassword) return alert("Password doesn't match.");
+    if (!passwordRegex.test(passsword))
+      return alert("Password validation dont match");
+
+    createNewUser(email, passsword)
+      .then((result) => {
+        updateUserProfile({displayName, photoURL})
+        .then(()=>{
+            logoutUser()
+            navigate("/login");
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col p-0 lg:flex-row-reverse">
-          <div className="text-center lg:text-left">{/* Image */}</div>
-          <div className="card bg-base-100 w-full max-w-2xl shrink-0 p-8 shadow-2xl">
-            <h2 className="font-playfair text-center text-3xl">Register </h2>
-            <form  className="card-body p-0">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter your name"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Profile</span>
-                </label>
-                <input
-                  type="text"
-                  name="profile"
-                  placeholder="Enter your profile link"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Enter your password"
-                  className="input input-bordered"
-                  required
-                />
-                
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
-              </div>
-            </form>
-            <p className="mt-4">
-              Already have and account?{" "}
-              <Link className="font-semibold text-red-500" to="/login">
-                Login
-              </Link>
-            </p>
+    <div className="flex h-screen items-center justify-center">
+      <div className="max-w-xl bg-slate-300 p-4">
+        <h2 className="mb-6">Register</h2>
+        <form onSubmit={handleRegister} className="space-y-3">
+          <div>
+            <input
+              type="text"
+              name="displayName"
+              placeholder="Enter your name"
+            />
           </div>
-        </div>
+          <div>
+            <input
+              type="text"
+              name="photoURL"
+              placeholder="Enter your photo url"
+            />
+          </div>
+          <div>
+            <input type="text" name="email" placeholder="Enter your email" />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="password"
+              placeholder="Enter your passsword"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="confirm-password"
+              placeholder="Confirm your password"
+            />
+          </div>
+          <div>
+            <button className="w-full text-center">Register</button>
+          </div>
+        </form>
+        <p>
+          Already Have an Account? <Link to="/login">Login</Link>
+        </p>
       </div>
     </div>
   );
