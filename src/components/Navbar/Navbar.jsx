@@ -15,7 +15,7 @@ const Navbar = () => {
           </h1>
         </div>
         <div>
-          <ul className="flex gap-3">
+          <ul className="flex gap-3 text-center">
             <li>
               <NavLink
                 className={({ isActive }) =>

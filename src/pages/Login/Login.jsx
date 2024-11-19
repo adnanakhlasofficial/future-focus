@@ -5,7 +5,7 @@ import eye from "../../assets/eye.svg";
 import eyeSlash from "../../assets/eyeSlash.svg";
 
 const Login = () => {
-  const { loginUser, setUser, googleLogin, user } = useContext(AuthContext);
+  const { loginUser, setUser, googleLogin, user, setLoading } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ const Login = () => {
       })
       .catch((error) => {
         alert(error.code);
+        setLoading(false)
       });
   };
 

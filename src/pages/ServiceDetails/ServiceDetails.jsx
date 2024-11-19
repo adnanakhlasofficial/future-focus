@@ -37,13 +37,13 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="wrapper space-y-12 py-10">
-      <div className="card rounded-lg bg-base-100 shadow-xl">
-        <figure>
+    <div className="wrapper flex flex-col items-center justify-center space-y-12 py-10">
+      <div className="card w-full max-w-3xl rounded-lg bg-base-100 shadow-xl">
+        <figure className="h-96">
           <img
             src={image}
             alt={serviceName}
-            className="h-full w-full object-cover"
+            className="h-full w-full bg-slate-300 object-contain object-center"
           />
         </figure>
         <div className="card-body space-y-2">
@@ -71,20 +71,20 @@ const ServiceDetails = () => {
             <strong>Skills Covered:</strong> {skillsCovered.join(", ")}
           </p>
 
-        <div className="mt-5">
-          <form onSubmit={handleFeedback} className="space-y-4">
-            <textarea
-              name="feedback"
-              className="textarea textarea-bordered h-64 w-full resize-none focus:border-primary focus:outline-none"
-              placeholder="Share Your feedback with us"
-            ></textarea>
-            <button className="btn-main w-full">Submit</button>
-          </form>
-        </div>
+          <div className="mt-5">
+            <form onSubmit={handleFeedback} className="space-y-4">
+              <textarea
+                name="feedback"
+                className="textarea textarea-bordered h-64 w-full resize-none focus:border-primary focus:outline-none"
+                placeholder="Share Your feedback with us"
+              ></textarea>
+              <button className="btn-main w-full">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="grid w-full max-w-3xl grid-cols-1  lg:grid-cols-2 gap-4">
         {comments.map((comment, idx) => (
           <div key={idx} className="space-y-2 rounded-lg border-2 p-4">
             <h2 className="text-xl font-medium">{user.displayName}</h2>

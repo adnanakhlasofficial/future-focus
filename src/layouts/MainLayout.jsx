@@ -1,8 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import Loading from "../components/Loading/Loading";
 
 const MainLayout = () => {
+  const {loading} = useContext(AuthContext);
+  
+  if (loading) return <Loading></Loading>
+
   return (
     <>
       <header className="bg-slate-100">

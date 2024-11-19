@@ -22,15 +22,15 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <div className="card rounded-lg bg-base-100 shadow-xl" data-aos="zoom-in-down">
-      <figure>
+    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl" data-aos="zoom-in-down">
+      <figure className="lg:w-1/2 rounded-md lg:rounded-b-md rounded-b-none lg:!rounded-r-none">
         <img
           src={image}
           alt={serviceName}
-          className="h-60 w-full object-cover"
+          className="h-full w-full object-cover object-center"
         />
       </figure>
-      <div className="card-body p-6">
+      <div className="card-body p-6 lg:w-1/2">
         <h2 className="card-title">{serviceName}</h2>
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session

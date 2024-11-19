@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
-    <div className="wrapper grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div className="h-full lg:col-span-2">
+    <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="h-full w-full">
         <h2 className="section-title !text-left">Contact Form</h2>
         <form className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-3 font-mulish">
           <div>
@@ -51,7 +51,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <div className="space-y-5 py-4">
+      <div className="space-y-5 py-4 max-w-96">
         <div className="space-y-2">
             <h2 className="section-title !text-2xl !text-left">Postal Addess:</h2>
             <p className="desc !text-gray">PO Box 97845 Some str. 567, Los Angeles, California, United States</p>

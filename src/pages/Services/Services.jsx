@@ -14,7 +14,7 @@ const Services = () => {
         bg={"bg-interview"}
       ></Banner>
 
-      <div className="wrapper grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-6">
         {data.map((service) => (
           <ServiceCard service={service} key={service.id}></ServiceCard>
         ))}
