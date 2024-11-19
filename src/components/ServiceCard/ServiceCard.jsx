@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl" data-aos="zoom-in-down">
+    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl">
       <figure className="lg:w-1/2 rounded-md lg:rounded-b-md rounded-b-none lg:!rounded-r-none">
         <img
           src={image}
