@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import userIcon from "../../assets/user.svg";
+import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const { user, updateUserProfile, setLoading } = useContext(AuthContext);
@@ -17,14 +18,25 @@ const MyProfile = () => {
     updateUserProfile({displayName, photoURL})
     .then(() => {
         setLoading(false)
+        Swal.fire({
+          title: "Profile Updated Successfully",
+          text: "Your profile has been updated. All changes have been saved!",
+          icon: "success"
+        });
     })
-    
+    .catch(error => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.code,
+      });
+    })
   };
 
   return (
     <div className="wrapper grid min-h-[calc(100vh-300px)] place-items-center">
-      <div className="w-full max-w-xl space-y-6 rounded-lg bg-slate-300 px-4 py-4">
-        <div>
+      <div className="w-full max-w-xl space-y-6 rounded-lg bg-slate-300 px-4 py-8">
+        <div className="px-4">
           <img
             className="h-40 w-40 object-cover object-center rounded-full ring-4 ring-offset-4 ring-offset-slate-300 ring-primary"
             src={user && user?.photoURL ? user?.photoURL : userIcon}

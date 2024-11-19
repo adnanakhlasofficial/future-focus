@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl">
+    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl font-mulish">
       <figure className="lg:w-1/2 rounded-md lg:rounded-b-md rounded-b-none lg:!rounded-r-none">
         <img
           src={image}
@@ -31,11 +31,11 @@ const ServiceCard = ({ service }) => {
         />
       </figure>
       <div className="card-body p-6 lg:w-1/2">
-        <h2 className="card-title">{serviceName}</h2>
+        <h2 className="card-title font-playfair">{serviceName}</h2>
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session
         </p>
-        <p className="mt-2">{description}</p>
+        <p className="">{description}</p>
         <p className="mt-2">
           <strong>Price:</strong> {pricing}
         </p>
@@ -51,7 +51,7 @@ const ServiceCard = ({ service }) => {
             count={5}
             edit={false}
             value={rating}
-            size={24}
+            size={20}
             activeColor="#ffd700"
           />{" "}
           {rating}

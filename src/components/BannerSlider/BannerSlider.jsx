@@ -21,13 +21,13 @@ const BannerSlider = () => {
         className="mySwiper h-full"
       >
         <SwiperSlide>
-          <Banner title={"Resume"} desc={"Resume is good"} bg={"bg-resume"}></Banner>
+          <Banner title={"Discover Your True Potential"} desc={"Unlock a personalized career path that matches your skills, interests, and dreams. Take the first step toward a brighter future today!"} bg={"bg-resume"}></Banner>
         </SwiperSlide>
         <SwiperSlide>
-          <Banner title={"Recruitment"} desc={"Recruitment is good"} bg={"bg-recruitment"}></Banner>
+          <Banner title={"Guidance for Every Step"} desc={"From choosing the right career to mastering your interviews, we provide expert advice to help you succeed at every stage."} bg={"bg-recruitment"}></Banner>
         </SwiperSlide>
         <SwiperSlide>
-          <Banner title={"Interview"} desc={"Inteview was awesome"} bg={"bg-interview"}></Banner>
+          <Banner title={"Shape Your Future with Confidence"} desc={"Explore opportunities, set goals, and achieve success with tailored career counseling designed just for you."} bg={"bg-interview"}></Banner>
         </SwiperSlide>
       </Swiper>
     </>

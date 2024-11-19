@@ -2,13 +2,32 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import userIcon from "../../assets/user.svg";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    logoutUser()
+    .then(() => {
+      Swal.fire({
+        title: "Logged Out Successfully",
+        text: "You have been logged out. See you next time!",
+        icon: "success"
+      });
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.code,
+      });
+    })
+  }
+  
   return (
     <div className="font-mulish">
-      <div className="wrapper min-h-20 flex flex-col lg:flex-row justify-between items-center gap-4 py-3">
+      <div className="wrapper flex min-h-20 flex-col items-center justify-between gap-4 py-3 lg:flex-row">
         <div>
           <h1 className="font-playfair text-4xl font-bold text-blue-gray">
             Future Focus
@@ -19,9 +38,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive
-                    ? "link-active"
-                    : "link-deactive"
+                  isActive ? "link-active" : "link-deactive"
                 }
                 to="/"
               >
@@ -31,9 +48,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive
-                    ? "link-active"
-                    : "link-deactive"
+                  isActive ? "link-active" : "link-deactive"
                 }
                 to="/services"
               >
@@ -43,9 +58,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive
-                    ? "link-active"
-                    : "link-deactive"
+                  isActive ? "link-active" : "link-deactive"
                 }
                 to="/contact"
               >
@@ -55,9 +68,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive
-                    ? "link-active"
-                    : "link-deactive"
+                  isActive ? "link-active" : "link-deactive"
                 }
                 to="/profile"
               >
@@ -66,17 +77,25 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:self-center lg:justify-self-end">
+        <div className="lg:self-center flex gap-4 items-center lg:justify-self-end">
+          {
+            user && user?.email && (
+              <div className="flex items-center gap-3">
+                <h2 className="text-center font-bold">{user?.displayName}</h2>
+                <Link to="/profile">
+                  <img
+                    className="h-10 w-10 object-cover object-center rounded-full ring ring-primary ring-offset-2"
+                    src={user && user?.photoURL ? user?.photoURL : userIcon} 
+                    alt=""
+                  />
+                </Link>
+              </div>
+            )
+          }
           {user && user?.email ? (
-            <div>
-              <button onClick={logoutUser}>
-                <img
-                  className="h-10 w-10 object-cover object-center rounded-full ring ring-primary ring-offset-2"
-                  src={user && user?.photoURL ? user?.photoURL : userIcon} 
-                  alt=""
-                />
-              </button>
-            </div>
+            <Link onClick={handleLogout} className="btn-main block">
+              Logout
+            </Link>
           ) : (
             <Link className="btn-main block" to="/login">
               Login

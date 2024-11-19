@@ -39,7 +39,7 @@ const ServiceDetails = () => {
   return (
     <div className="wrapper flex flex-col items-center justify-center space-y-12 py-10">
       <div className="card w-full max-w-3xl rounded-lg bg-base-100 shadow-xl">
-        <figure className="h-96">
+        <figure className="h-72">
           <img
             src={image}
             alt={serviceName}
@@ -75,7 +75,7 @@ const ServiceDetails = () => {
             <form onSubmit={handleFeedback} className="space-y-4">
               <textarea
                 name="feedback"
-                className="textarea textarea-bordered h-64 w-full resize-none focus:border-primary focus:outline-none"
+                className="textarea textarea-bordered h-24 w-full resize-none focus:border-primary focus:outline-none"
                 placeholder="Share Your feedback with us"
               ></textarea>
               <button className="btn-main w-full">Submit</button>
