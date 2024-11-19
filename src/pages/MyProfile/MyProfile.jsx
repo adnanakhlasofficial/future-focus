@@ -3,19 +3,30 @@ import { AuthContext } from "../../provider/AuthProvider";
 import userIcon from "../../assets/user.svg";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, updateUserProfile, setLoading } = useContext(AuthContext);
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
+    
+    const form = new FormData(e.target);
+    const displayName = form.get("name") ? form.get("name") : user?.displayName;
+    const photoURL = form.get("photo-url") ? form.get("photo-url") : user?.photoURL;
+    
+    console.log({displayName, photoURL});
+
+    updateUserProfile({displayName, photoURL})
+    .then(() => {
+        setLoading(false)
+    })
+    
   };
 
-  console.log(user?.metadata?.creationTime.slice(0, 16));
   return (
     <div className="wrapper grid min-h-[calc(100vh-300px)] place-items-center">
       <div className="w-full max-w-xl space-y-6 rounded-lg bg-slate-300 px-4 py-4">
         <div>
           <img
-            className="h-40 rounded-full ring-4 ring-offset-4 ring-offset-slate-300 ring-primary"
+            className="h-40 w-40 object-cover object-center rounded-full ring-4 ring-offset-4 ring-offset-slate-300 ring-primary"
             src={user && user?.photoURL ? user?.photoURL : userIcon}
             alt=""
           />
@@ -39,13 +50,13 @@ const MyProfile = () => {
           </section>
         </div>
         <div>
-          <form onSubmit={handleUpdateProfile} className="space-y-3">
+          <form onSubmit={handleUpdateProfile} className="space-y-3 font-mulish">
             <div>
               <input
                 type="text"
-                name="email"
+                name="name"
                 className="form-input"
-                placeholder="Enter your email"
+                placeholder="Enter your name"
               />
             </div>
             <div>
@@ -60,8 +71,8 @@ const MyProfile = () => {
             </div>
             <div>
               <input
-                type="text"
-                name="email"
+                type="url"
+                name="photo-url"
                 className="form-input"
                 placeholder="Enter your photo url"
               />

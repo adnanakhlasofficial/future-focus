@@ -71,7 +71,7 @@ const Navbar = () => {
             <div>
               <button onClick={logoutUser}>
                 <img
-                  className="h-10 w-10 rounded-full ring ring-primary ring-offset-2"
+                  className="h-10 w-10 object-cover object-center rounded-full ring ring-primary ring-offset-2"
                   src={user && user?.photoURL ? user?.photoURL : userIcon} 
                   alt=""
                 />
