@@ -9,6 +9,7 @@ import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 import Error from "../pages/Error/Error";
 import Services from "../pages/Services/Services";
 import PrivateRoute from "./PrivateRoute";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services></Services>,
         loader: () => fetch("/services.json")
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       },
       {
         path: "/service-details/:id",

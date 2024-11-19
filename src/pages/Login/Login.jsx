@@ -7,11 +7,13 @@ import eyeSlash from "../../assets/eyeSlash.svg";
 const Login = () => {
   const { loginUser, setUser, googleLogin, user } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const { state } = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
 
-  if (user) return <Navigate to="/"></Navigate>;
-  console.log(state);
+  console.log(location?.state?.from?.pathname);
+
+  if (user) return <Navigate to={location?.state?.from?.pathname ? location?.state?.from?.pathname : "/"}></Navigate>;
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -22,7 +24,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
-        // navigate(state ? state : "/");
+        navigate(location?.state?.from?.pathname ? location?.state?.from?.pathname : "/");
       })
       .catch((error) => {
         alert(error.code);
@@ -33,8 +35,8 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         setUser(result.user);
-        // navigate(state ? state : "/");
-        console.log("state", state);
+        navigate(location?.state?.from?.pathname ? location?.state?.from?.pathname : "/");
+        // console.log("state", state);
       })
       .catch((error) => {
         alert(error.code);

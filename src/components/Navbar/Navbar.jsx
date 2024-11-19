@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import userIcon from "../../assets/user.svg";
 
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
 
   return (
     <div className="font-mulish">
-      <div className="wrapper flex flex-col lg:flex-row justify-between items-center gap-4 py-3">
+      <div className="wrapper min-h-20 flex flex-col lg:flex-row justify-between items-center gap-4 py-3">
         <div>
           <h1 className="font-playfair text-4xl font-bold text-blue-gray">
             Future Focus
@@ -46,9 +47,9 @@ const Navbar = () => {
                     ? "link-active"
                     : "link-deactive"
                 }
-                to="/contacts"
+                to="/contact"
               >
-                Contacts
+                Contact Us
               </NavLink>
             </li>
             <li>
@@ -71,7 +72,7 @@ const Navbar = () => {
               <button onClick={logoutUser}>
                 <img
                   className="h-10 w-10 rounded-full ring ring-primary ring-offset-2"
-                  src="https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+                  src={user && user?.photoURL ? user?.photoURL : userIcon} 
                   alt=""
                 />
               </button>
