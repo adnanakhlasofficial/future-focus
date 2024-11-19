@@ -30,11 +30,11 @@ const Navbar = () => {
       <div className="wrapper flex min-h-20 flex-col items-center justify-between gap-4 py-3 lg:flex-row">
         <div>
           <h1 className="font-playfair text-4xl font-bold text-blue-gray">
-            Future Focus
+            <Link to="/">Future Focus</Link>
           </h1>
         </div>
         <div>
-          <ul className="flex gap-3 text-center">
+          <ul className="flex gap-3 lg:gap-6 text-center *:uppercase *:text-sm">
             <li>
               <NavLink
                 className={({ isActive }) =>

@@ -35,7 +35,7 @@ const ServiceCard = ({ service }) => {
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session
         </p>
-        <p className="">{description}</p>
+        <p className="mt-2">{description}</p>
         <p className="mt-2">
           <strong>Price:</strong> {pricing}
         </p>
