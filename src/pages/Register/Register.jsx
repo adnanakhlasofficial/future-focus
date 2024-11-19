@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import eye from "../../assets/eye.svg";
 import eyeSlash from "../../assets/eyeSlash.svg";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createNewUser, updateUserProfile, logoutUser } =
+  const { createNewUser, updateUserProfile, logoutUser, setLoading, googleLogin, setUser } =
     useContext(AuthContext);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -34,14 +35,48 @@ const Register = () => {
     createNewUser(email, passsword)
       .then(() => {
         updateUserProfile({ displayName, photoURL }).then(() => {
+          Swal.fire({
+            title: `Hi, ${displayName}`,
+            text: "We are pleased to confirm that your registration for has been successful.",
+            icon: "success"
+          });
           logoutUser();
           navigate("/login");
         });
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false)
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.code,
+        });
       });
   };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        setUser(result.user);
+        Swal.fire({
+          title: "Success",
+          text: "You are successfully logged in",
+          icon: "success",
+        });
+        navigate(
+          location?.state?.from?.pathname
+            ? location?.state?.from?.pathname
+            : "/",
+        );
+        // console.log("state", state);
+      })
+      .catch((error) => {
+        alert(error.code);
+      });
+  };
+
+
 
   return (
     <div className="flex min-h-[calc(100vh-144px)] items-center justify-center">
@@ -50,7 +85,7 @@ const Register = () => {
           <h2 className="font-playfair text-4xl font-semibold text-blue-gray">
             Future Focus
           </h2>
-          <p className="desc !text-blue-gray">Register to our product today for free</p>
+          <p className="desc !text-blue-gray">Register today for free</p>
         </div>
         <form onSubmit={handleRegister} className="w-full space-y-3 *:w-full">
           <div>
@@ -113,6 +148,11 @@ const Register = () => {
           >
             Login
           </Link>
+        </p>
+        <p>
+          <button className="btn-main w-full" onClick={handleGoogleLogin}>
+            Login with Google
+          </button>
         </p>
       </div>
     </div>

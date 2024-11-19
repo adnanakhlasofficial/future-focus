@@ -3,16 +3,27 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import eye from "../../assets/eye.svg";
 import eyeSlash from "../../assets/eyeSlash.svg";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const { loginUser, setUser, googleLogin, user, setLoading } = useContext(AuthContext);
+  const { loginUser, setUser, googleLogin, user, setLoading, loading } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   console.log(location?.state?.from?.pathname);
 
-  if (user) return <Navigate to={location?.state?.from?.pathname ? location?.state?.from?.pathname : "/"}></Navigate>;
+  if (user)
+    return (
+      <Navigate
+        to={
+          location?.state?.from?.pathname
+            ? location?.state?.from?.pathname
+            : "/"
+        }
+      ></Navigate>
+    );
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,11 +35,24 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
-        navigate(location?.state?.from?.pathname ? location?.state?.from?.pathname : "/");
+        Swal.fire({
+          title: "Success",
+          text: "You are successfully logged in",
+          icon: "success",
+        });
+        navigate(
+          location?.state?.from?.pathname
+            ? location?.state?.from?.pathname
+            : "/",
+        );
       })
       .catch((error) => {
-        alert(error.code);
-        setLoading(false)
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.code,
+        });
+        setLoading(false);
       });
   };
 
@@ -36,7 +60,16 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         setUser(result.user);
-        navigate(location?.state?.from?.pathname ? location?.state?.from?.pathname : "/");
+        Swal.fire({
+          title: "Success",
+          text: "You are successfully logged in",
+          icon: "success",
+        });
+        navigate(
+          location?.state?.from?.pathname
+            ? location?.state?.from?.pathname
+            : "/",
+        );
         // console.log("state", state);
       })
       .catch((error) => {
