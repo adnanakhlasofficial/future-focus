@@ -31,13 +31,13 @@
     @apply font-mulish text-xl text-base-300;
   }
   .section-title {
-    @apply text-center font-playfair text-2xl lg:text-4xl font-bold shadow-blue-800 drop-shadow-lg;
+    @apply text-center font-playfair text-2xl lg:text-4xl font-bold shadow-blue-800 drop-shadow-lg tracking-wider;
   }
   .section-desc {
     @apply mx-auto max-w-[40rem] text-center font-mulish text-xl text-gray;
   }
   .footer-title {
-    @apply font-playfair text-2xl text-base-100 !opacity-100;
+    @apply font-playfair text-2xl text-base-100 !opacity-100 tracking-wider;
   }
   .footer-link {
     @apply hover:text-primary cursor-pointer duration-300

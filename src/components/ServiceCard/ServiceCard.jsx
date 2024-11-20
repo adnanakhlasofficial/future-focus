@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import PropTypes from "prop-types";
 AOS.init();
 
 const ServiceCard = ({ service }) => {
@@ -14,11 +15,7 @@ const ServiceCard = ({ service }) => {
     pricing,
     duration,
     counselor,
-    rating,
-    learnMore,
-    location,
-    ageGroup,
-    skillsCovered,
+    rating
   } = service;
 
   return (
@@ -31,7 +28,7 @@ const ServiceCard = ({ service }) => {
         />
       </figure>
       <div className="card-body p-6 lg:w-1/2">
-        <h2 className="card-title font-playfair">{serviceName}</h2>
+        <h2 className="card-title font-playfair tracking-wider">{serviceName}</h2>
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session
         </p>
@@ -65,5 +62,9 @@ const ServiceCard = ({ service }) => {
     </div>
   );
 };
+
+ServiceCard.propTypes = {
+  service: PropTypes.object
+}
 
 export default ServiceCard;

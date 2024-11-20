@@ -20,7 +20,6 @@ const ServiceDetails = () => {
     duration,
     counselor,
     rating,
-    learnMore,
     location,
     ageGroup,
     skillsCovered,
@@ -92,9 +91,14 @@ const ServiceDetails = () => {
 
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 lg:grid-cols-2">
           {comments.map((comment, idx) => (
-            <div key={idx} className="space-y-2 rounded-lg p-5 shadow-xl bg-white">
-              <h2 className="text-xl font-medium font-playfair">{user.displayName}</h2>
-              <p className="font-mulish">{comment}</p>
+            <div key={idx} className="flex gap-3 rounded-lg p-5 shadow-xl bg-white">
+              <div>
+                <img className="w-10 h-10 rounded-full object-cover object-center" src={user?.photoURL} alt="" />
+              </div>
+              <div>
+                <h2 className="text-xl font-medium font-playfair tracking-wider">{user.displayName}</h2>
+                <p className="font-mulish">{comment}</p>
+              </div>
             </div>
           ))}
         </div>
