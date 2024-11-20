@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import userIcon from "../../assets/user.svg";
 
 const ServiceDetails = () => {
   const data = useLoaderData();
@@ -98,7 +99,7 @@ const ServiceDetails = () => {
               <div>
                 <img
                   className="h-10 w-10 rounded-full object-cover object-center"
-                  src={user?.photoURL}
+                  src={user?.photoURL ? user?.photoURL : userIcon}
                   alt=""
                 />
               </div>

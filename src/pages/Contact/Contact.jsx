@@ -1,6 +1,7 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const form = useRef();
@@ -14,10 +15,18 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          Swal.fire({
+            title: "Email Sent Successfully!",
+            text: "Your email has been sent successfully! Thank you for reaching out. We'll get back to you as soon as possible.",
+            icon: "success",
+          });
         },
         (error) => {
-          console.log("FAILED...", error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
         },
       );
   };
@@ -39,6 +48,7 @@ const Contact = () => {
             <div>
               <input
                 type="text"
+                required
                 name="name"
                 className="form-input"
                 placeholder="Enter your name"
@@ -47,6 +57,7 @@ const Contact = () => {
             <div>
               <input
                 type="email"
+                required
                 name="email"
                 className="form-input"
                 placeholder="Email Address"
@@ -55,6 +66,7 @@ const Contact = () => {
             <div className="">
               <input
                 type="text"
+                required
                 name="subject"
                 className="form-input"
                 placeholder="Subject"
@@ -63,6 +75,7 @@ const Contact = () => {
             <div>
               <input
                 type="text"
+                required
                 name="phone"
                 className="form-input"
                 placeholder="Phone"
@@ -71,6 +84,7 @@ const Contact = () => {
             <div className="col-span-full">
               <textarea
                 name="message"
+                required
                 className="form-input h-36 w-full resize-none"
                 placeholder="Message"
               ></textarea>
@@ -94,11 +108,11 @@ const Contact = () => {
           </div>
           <div className="space-y-2">
             <h2 className="section-title !text-left !text-2xl">Phone:</h2>
-            <p className="desc !text-gray">8(800) 123-12345</p>
+            <p className="desc !text-gray">+(880) 1672-478515</p>
           </div>
           <div className="space-y-2">
             <h2 className="section-title !text-left !text-2xl">Email:</h2>
-            <p className="desc !text-gray">mail@company.com</p>
+            <p className="desc !text-gray">support@futurefocus.com</p>
           </div>
         </div>
       </div>

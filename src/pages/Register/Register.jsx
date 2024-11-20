@@ -102,6 +102,7 @@ const Register = () => {
               <input
                 type="text"
                 autoFocus
+                required
                 name="displayName"
                 className="form-input"
                 placeholder="Enter your name"
@@ -118,6 +119,7 @@ const Register = () => {
             <div>
               <input
                 type="text"
+                required
                 name="email"
                 className="form-input"
                 placeholder="Enter your email"
@@ -128,6 +130,7 @@ const Register = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
+                  required
                   className="form-input"
                   placeholder="Enter your passsword"
                 />
@@ -143,6 +146,7 @@ const Register = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="confirm-password"
+                required
                 className="form-input"
                 placeholder="Confirm your password"
               />

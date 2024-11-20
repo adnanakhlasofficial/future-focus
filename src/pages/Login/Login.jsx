@@ -97,6 +97,7 @@ const Login = () => {
               <input
                 type="text"
                 autoFocus
+                required
                 name="email"
                 className="form-input"
                 placeholder="Enter your email"
@@ -107,6 +108,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
+                  required
                   className="form-input"
                   placeholder="Enter your passsword"
                 />

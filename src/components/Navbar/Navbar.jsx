@@ -65,16 +65,18 @@ const Navbar = () => {
                 Contact Us
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "link-active" : "link-deactive"
-                }
-                to="/profile"
-              >
-                Profile
-              </NavLink>
-            </li>
+            {user && user?.email && (
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "link-active" : "link-deactive"
+                  }
+                  to="/profile"
+                >
+                  Profile
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div className="flex items-center gap-4 lg:self-center lg:justify-self-end">
