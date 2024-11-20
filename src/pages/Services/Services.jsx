@@ -17,7 +17,7 @@ const Services = () => {
         <Banner
           title={"Empowering Careers, One Step at a Time"}
           desc={
-            "Our comprehensive services are designed to guide you through every phase of your career journey. From career assessments and skill-building workshops to resume crafting and interview preparation, we’re here to help you succeed. Discover how we can turn your ambitions into achievements!"
+            "Our services are designed to guide you toward career success, offering personalized counseling, expert resources, and tools to help you achieve your professional aspirations with confidence!"
           }
           bg={"bg-interview"}
         ></Banner>

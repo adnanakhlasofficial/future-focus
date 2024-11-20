@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   .form-input {
     @apply w-full rounded-md px-4 py-2 focus:border-primary focus:outline-primary;
@@ -19,7 +20,7 @@
   }
 }
 
-@layer utilities {
+@layer base {
   .wrapper {
     @apply container mx-auto w-3/4 max-w-[90rem];
   }
@@ -36,9 +37,12 @@
     @apply mx-auto max-w-[40rem] text-center font-mulish text-xl text-gray;
   }
   .footer-title {
-    @apply font-playfair text-6xl text-white;
+    @apply font-playfair text-2xl text-base-100 !opacity-100;
+  }
+  .footer-link {
+    @apply hover:text-primary cursor-pointer duration-300
   }
   .footer-desc {
-    @apply font-mulish text-lg uppercase text-white;
+    @apply font-mulish text-base text-gray;
   }
 }
