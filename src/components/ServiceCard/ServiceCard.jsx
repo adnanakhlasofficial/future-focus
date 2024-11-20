@@ -19,7 +19,7 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <div className="card lg:flex-row rounded-lg bg-base-100 shadow-xl font-mulish">
+    <div className="card lg:flex-row rounded-lg bg-base-100 transition-all duration-300 hover:shadow-xl relative hover:-translate-x-1 hover:-translate-y-1 font-mulish">
       <figure className="lg:w-1/2 rounded-md lg:rounded-b-md rounded-b-none lg:!rounded-r-none">
         <img
           src={image}

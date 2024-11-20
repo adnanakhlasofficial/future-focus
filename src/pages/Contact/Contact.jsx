@@ -1,16 +1,42 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Contact = () => {
+  const form = useRef();
+
+  const handleSendMail = (e) => {
+    e.preventDefault();
+    
+
+    emailjs
+      .sendForm("service_phsonpg", "template_lh4jbcm", form.current, {
+        publicKey: "Q-5Kx4ARO8_H6G6k2",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        },
+      );
+  };
+
   return (
     <HelmetProvider>
-      <div className="wrapper grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className="wrapper grid w-max grid-cols-1 justify-center gap-8 lg:grid-cols-2">
         <Helmet>
           <title>Contact Us | Future Focus</title>
           <link rel="canonical" href="https://www.tacobell.com/" />
         </Helmet>
         <div className="h-full w-full">
           <h2 className="section-title !text-left">Contact Form</h2>
-          <form className="mt-6 grid grid-cols-1 gap-3 font-mulish lg:grid-cols-2">
+          <form
+            ref={form}
+            onSubmit={handleSendMail}
+            className="mt-6 grid grid-cols-1 gap-3 font-mulish lg:grid-cols-2"
+          >
             <div>
               <input
                 type="text"
@@ -27,7 +53,7 @@ const Contact = () => {
                 placeholder="Email Address"
               />
             </div>
-            <div>
+            <div className="">
               <input
                 type="text"
                 name="subject"
