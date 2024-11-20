@@ -12,7 +12,7 @@ const TestimonialCard = ({ singleTestimonial }) => {
       </figure>
       <div className="text-center">
         <h3 className="text-lg font-bold font-playfair">{name}</h3>
-        <p className="text-gray font-mulish mt-2 text-sm w-72 mx-auto">{message}</p>
+        <p className="text-gray font-mulish mt-2 text-sm max-w-72 mx-auto">{message}</p>
       </div>
     </div>
   );

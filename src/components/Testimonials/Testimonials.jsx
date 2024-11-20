@@ -18,7 +18,7 @@ const Testimonials = () => {
         Be inspired by their journeys and start yours today!{" "}
       </p>
 
-      <div className="grid grid-cols-2 gap-4 !mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 !mt-12">
         {testimonial.map((singleTestimonial) => (
           <TestimonialCard
             key={singleTestimonial.id}

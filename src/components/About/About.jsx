@@ -3,8 +3,8 @@ import teamImg from "../../assets/team.jpg"
 
 const About = () => {
   return (
-    <section className="flex justify-between items-center gap-8">
-      <div className="space-y-4 w-1/2">
+    <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8">
+      <div className="space-y-4 w-full lg:w-1/2">
         <div className="space-y-4">
           <h2 className="section-title !text-left">About Us</h2>
           <p className="section-desc !mx-0 !text-left">
@@ -53,7 +53,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-1/2">
+      <div className="w-full lg:w-1/2">
         <img className="rounded-lg w-full" src={teamImg} alt="team_img" />
       </div>
     </section>

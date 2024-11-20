@@ -101,6 +101,7 @@ const Register = () => {
             <div>
               <input
                 type="text"
+                autoFocus
                 name="displayName"
                 className="form-input"
                 placeholder="Enter your name"

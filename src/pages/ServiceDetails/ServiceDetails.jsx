@@ -82,7 +82,7 @@ const ServiceDetails = () => {
                 <textarea
                   name="feedback"
                   className="textarea textarea-bordered h-24 w-full resize-none focus:border-primary focus:outline-none"
-                  placeholder="Share Your feedback with us"
+                  placeholder="Share Your feedback"
                 ></textarea>
                 <button className="btn-main w-full">Submit</button>
               </form>
@@ -92,9 +92,9 @@ const ServiceDetails = () => {
 
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 lg:grid-cols-2">
           {comments.map((comment, idx) => (
-            <div key={idx} className="space-y-2 rounded-lg border-2 p-4">
-              <h2 className="text-xl font-medium">{user.displayName}</h2>
-              <p>{comment}</p>
+            <div key={idx} className="space-y-2 rounded-lg p-5 shadow-xl bg-white">
+              <h2 className="text-xl font-medium font-playfair">{user.displayName}</h2>
+              <p className="font-mulish">{comment}</p>
             </div>
           ))}
         </div>
