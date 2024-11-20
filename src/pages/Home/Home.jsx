@@ -2,6 +2,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import BannerSlider from "../../components/BannerSlider/BannerSlider";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Testimonials from "../../components/Testimonials/Testimonials";
+import About from "../../components/About/About";
 
 const Home = () => {
   const services = useLoaderData();
@@ -14,6 +16,10 @@ const Home = () => {
           <link rel="canonical" href="https://www.tacobell.com/" />
         </Helmet>
         <BannerSlider></BannerSlider>
+        
+        <section className="wrapper">
+          <About></About>
+        </section>
 
         <section className="wrapper space-y-8">
           <h2 className="section-title">Services</h2>
@@ -27,6 +33,10 @@ const Home = () => {
               View All
             </Link>
           </div>
+        </section>
+
+        <section className="wrapper">
+          <Testimonials></Testimonials>
         </section>
       </div>
     </HelmetProvider>

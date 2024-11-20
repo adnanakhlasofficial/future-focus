@@ -32,6 +32,9 @@
   .section-title {
     @apply text-center font-playfair text-4xl font-bold shadow-blue-800 drop-shadow-lg;
   }
+  .section-desc {
+    @apply mx-auto max-w-[40rem] text-center font-mulish text-xl text-gray;
+  }
   .footer-title {
     @apply font-playfair text-6xl text-white;
   }

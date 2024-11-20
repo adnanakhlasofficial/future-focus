@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "John Carter",
+    "image": "https://i.ibb.co.com/KXNzfm0/man4.jpg",
+    "message": "Future Focus gave me the confidence to switch careers and excel in a new field!"
+  },
+  {
+    "id": 2,
+    "name": "David Smith",
+    "image": "https://i.ibb.co.com/yhfB3HT/man3.jpg",
+    "message": "The expert guidance and tools provided were instrumental in my career growth."
+  },
+  {
+    "id": 3,
+    "name": "Alex Johnson",
+    "image": "https://i.ibb.co.com/fHxFCDH/man2.jpg",
+    "message": "I discovered my true potential and landed a job I love, thanks to Future Focus."
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "image": "https://i.ibb.co.com/pK4kFh9/woman3.jpg",
+    "message": "The personalized advice helped me gain clarity and set achievable career goals."
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "image": "https://i.ibb.co.com/CBTTg7k/man1.jpg",
+    "message": "Future Focus made my career transition seamless and stress-free!"
+  },
+  {
+    "id": 6,
+    "name": "Sophia Lee",
+    "image": "https://i.ibb.co.com/pZF1P53/women1.jpg",
+    "message": "I couldn’t have done it without the incredible support and insights from Future Focus."
+  }
+]
