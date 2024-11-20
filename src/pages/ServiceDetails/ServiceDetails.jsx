@@ -91,12 +91,21 @@ const ServiceDetails = () => {
 
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 lg:grid-cols-2">
           {comments.map((comment, idx) => (
-            <div key={idx} className="flex gap-3 rounded-lg p-5 shadow-xl bg-white">
+            <div
+              key={idx}
+              className="flex gap-3 rounded-lg bg-white p-5 shadow-xl"
+            >
               <div>
-                <img className="w-10 h-10 rounded-full object-cover object-center" src={user?.photoURL} alt="" />
+                <img
+                  className="h-10 w-10 rounded-full object-cover object-center"
+                  src={user?.photoURL}
+                  alt=""
+                />
               </div>
               <div>
-                <h2 className="text-xl font-medium font-playfair tracking-wider">{user.displayName}</h2>
+                <h2 className="font-playfair text-xl font-medium tracking-wider">
+                  {user.displayName}
+                </h2>
                 <p className="font-mulish">{comment}</p>
               </div>
             </div>

@@ -18,7 +18,7 @@ const MyProfile = () => {
     console.log({ displayName, photoURL });
 
     if (!displayName && !photoURL) {
-      return alert("Fill the field")
+      return alert("Fill the field");
     }
 
     updateUserProfile({ displayName, photoURL })
@@ -47,9 +47,13 @@ const MyProfile = () => {
           <link rel="canonical" href="https://www.tacobell.com/" />
         </Helmet>
         <div className="w-full max-w-xl space-y-6 rounded-lg bg-slate-300 px-4 py-8">
-          <Link to={user.photoURL && user.photoURL} target="_blank" className="px-4">
+          <Link
+            to={user.photoURL && user.photoURL}
+            target="_blank"
+            className="px-4"
+          >
             <img
-              className="cursor-pointer h-40 w-40 rounded-full object-cover object-center ring-4 ring-primary ring-offset-4 ring-offset-slate-300"
+              className="h-40 w-40 cursor-pointer rounded-full object-cover object-center ring-4 ring-primary ring-offset-4 ring-offset-slate-300"
               src={user && user?.photoURL ? user?.photoURL : userIcon}
               alt=""
             />
@@ -60,7 +64,7 @@ const MyProfile = () => {
             </h2>
             <section className="flex flex-col justify-between gap-1 lg:flex-row">
               <div>
-                <p className="font-playfair text-3xl font-bold text-deep-black tracking-wider">
+                <p className="font-playfair text-3xl font-bold tracking-wider text-deep-black">
                   {user?.displayName}
                 </p>
                 <p className="desc !text-blue-gray">{user?.email}</p>

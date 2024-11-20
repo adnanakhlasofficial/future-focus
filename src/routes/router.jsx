@@ -24,21 +24,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("/services.json")
+        loader: () => fetch("/services.json"),
       },
       {
         path: "/contact",
-        element: <Contact></Contact>
+        element: <Contact></Contact>,
       },
       {
         path: "/service-details/:id",
-        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: () => fetch("/services.json")
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/services.json"),
       },
       {
         path: "/login",

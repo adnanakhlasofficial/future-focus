@@ -1,13 +1,21 @@
-import { FaLinkedin, FaSquareFacebook, FaSquareInstagram, FaSquareTwitter, FaYoutube } from "react-icons/fa6";
+import {
+  FaLinkedin,
+  FaSquareFacebook,
+  FaSquareInstagram,
+  FaSquareTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-deep-black pt-20 pb-10">
+    <div className="bg-deep-black pb-10 pt-20">
       <section className="wrapper grid grid-cols-1 justify-between gap-6 lg:grid-cols-3">
         <div className="space-y-3">
           <h2 className="footer-title">Future Focus</h2>
           <p className="footer-desc">
-          Future Focus is your partner in career success, offering expert guidance and resources to help you achieve your professional goals. Let&apos;s shape your future together!
+            Future Focus is your partner in career success, offering expert
+            guidance and resources to help you achieve your professional goals.
+            Let&apos;s shape your future together!
           </p>
         </div>
         <div className="lg:justify-self-center">
@@ -22,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="lg:justify-self-center">
           <h2 className="footer-title font-playfair !text-lg">Social</h2>
-          <ul className="*:text-xl *:cursor-pointer *:font-mulish *:text-gray flex gap-2 items-center">
+          <ul className="flex items-center gap-2 *:cursor-pointer *:font-mulish *:text-xl *:text-gray">
             <li>
               <FaSquareFacebook className="footer-link" />
             </li>
@@ -42,8 +50,10 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="border-t-2 mt-10">
-        <p className="text-gray text-center pt-10">&copy; 2024 Future Focus. All Rights Reserved.</p>
+      <section className="mt-10 border-t-2">
+        <p className="pt-10 text-center text-gray">
+          &copy; 2024 Future Focus. All Rights Reserved.
+        </p>
       </section>
     </div>
   );

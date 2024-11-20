@@ -16,8 +16,8 @@ const MainLayout = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   console.log(scroll);
@@ -26,7 +26,13 @@ const MainLayout = () => {
 
   return (
     <>
-      <header className={scroll ? "sticky top-0 z-10 shadow-lg bg-slate-100 backdrop-blur-md" : "bg-slate-100 "}>
+      <header
+        className={
+          scroll
+            ? "sticky top-0 z-10 bg-slate-100 shadow-lg backdrop-blur-md"
+            : "bg-slate-100"
+        }
+      >
         <Navbar></Navbar>
       </header>
       <main className="min-h-[calc(100vh-260px)] bg-slate-100 py-5">

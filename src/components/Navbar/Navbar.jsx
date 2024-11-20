@@ -9,22 +9,22 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logoutUser()
-    .then(() => {
-      Swal.fire({
-        title: "Logged Out Successfully",
-        text: "You have been logged out. See you next time!",
-        icon: "success"
+      .then(() => {
+        Swal.fire({
+          title: "Logged Out Successfully",
+          text: "You have been logged out. See you next time!",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.code,
+        });
       });
-    })
-    .catch(error => {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.code,
-      });
-    })
-  }
-  
+  };
+
   return (
     <div className="font-mulish">
       <div className="wrapper flex min-h-20 flex-col items-center justify-between gap-4 py-3 lg:flex-row">
@@ -34,7 +34,7 @@ const Navbar = () => {
           </h1>
         </div>
         <div>
-          <ul className="flex gap-3 lg:gap-6 text-center *:uppercase *:text-sm">
+          <ul className="flex gap-3 text-center *:text-sm *:uppercase lg:gap-6">
             <li>
               <NavLink
                 className={({ isActive }) =>
@@ -77,21 +77,19 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:self-center flex gap-4 items-center lg:justify-self-end">
-          {
-            user && user?.email && (
-              <div className="flex items-center gap-3">
-                <h2 className="text-center font-bold">{user?.displayName}</h2>
-                <Link to="/profile">
-                  <img
-                    className="h-10 w-10 object-cover object-center rounded-full ring ring-primary ring-offset-2"
-                    src={user && user?.photoURL ? user?.photoURL : userIcon} 
-                    alt=""
-                  />
-                </Link>
-              </div>
-            )
-          }
+        <div className="flex items-center gap-4 lg:self-center lg:justify-self-end">
+          {user && user?.email && (
+            <div className="flex items-center gap-3">
+              <h2 className="text-center font-bold">{user?.displayName}</h2>
+              <Link to="/profile">
+                <img
+                  className="h-10 w-10 rounded-full object-cover object-center ring ring-primary ring-offset-2"
+                  src={user && user?.photoURL ? user?.photoURL : userIcon}
+                  alt=""
+                />
+              </Link>
+            </div>
+          )}
           {user && user?.email ? (
             <Link onClick={handleLogout} className="btn-main block">
               Logout

@@ -15,12 +15,12 @@ const ServiceCard = ({ service }) => {
     pricing,
     duration,
     counselor,
-    rating
+    rating,
   } = service;
 
   return (
-    <div className="card lg:flex-row rounded-lg bg-base-100 transition-all duration-300 hover:shadow-xl relative hover:-translate-x-1 hover:-translate-y-1 font-mulish">
-      <figure className="lg:w-1/2 rounded-md lg:rounded-b-md rounded-b-none lg:!rounded-r-none">
+    <div className="card relative rounded-lg bg-base-100 font-mulish transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl lg:flex-row">
+      <figure className="rounded-md rounded-b-none lg:w-1/2 lg:!rounded-r-none lg:rounded-b-md">
         <img
           src={image}
           alt={serviceName}
@@ -28,7 +28,9 @@ const ServiceCard = ({ service }) => {
         />
       </figure>
       <div className="card-body p-6 lg:w-1/2">
-        <h2 className="card-title font-playfair tracking-wider">{serviceName}</h2>
+        <h2 className="card-title font-playfair tracking-wider">
+          {serviceName}
+        </h2>
         <p className="text-gray-500 itece flex gap-2 text-sm">
           {category} session
         </p>
@@ -64,7 +66,7 @@ const ServiceCard = ({ service }) => {
 };
 
 ServiceCard.propTypes = {
-  service: PropTypes.object
-}
+  service: PropTypes.object,
+};
 
 export default ServiceCard;

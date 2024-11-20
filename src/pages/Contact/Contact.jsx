@@ -7,7 +7,6 @@ const Contact = () => {
 
   const handleSendMail = (e) => {
     e.preventDefault();
-    
 
     emailjs
       .sendForm("service_phsonpg", "template_lh4jbcm", form.current, {

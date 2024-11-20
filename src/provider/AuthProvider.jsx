@@ -10,7 +10,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import PropTypes from "prop-types";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -36,8 +38,8 @@ const AuthProvider = ({ children }) => {
   };
 
   const passwordReset = (email) => {
-    return sendPasswordResetEmail(auth, email)
-  }
+    return sendPasswordResetEmail(auth, email);
+  };
 
   const updateUserProfile = (updatedData) => {
     setLoading(true);
@@ -65,12 +67,16 @@ const AuthProvider = ({ children }) => {
     passwordReset,
     logoutUser,
     loading,
-    setLoading
+    setLoading,
   };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.object,
 };
 
 export default AuthProvider;
