@@ -18,7 +18,7 @@ const Services = () => {
           desc={
             "Our services are designed to guide you toward career success, offering personalized counseling, expert resources, and tools to help you achieve your professional aspirations with confidence!"
           }
-          bg={"bg-interview"}
+          bg={"bg-services"}
         ></Banner>
 
         <div className="wrapper grid grid-cols-1 gap-6 lg:grid-cols-2">

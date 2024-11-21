@@ -4,22 +4,22 @@ const EventCard = ({singleEvent}) => {
 
     const { title, description, date, time, location, image } = singleEvent
   return (
-    <div className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-      <figure>
-        <img src={image} alt={title} className="h-48 w-full object-cover" />
+    <div className="card rounded-lg bg-base-100 font-mulish transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl">
+      <figure className="rounded-md rounded-b-none h-52">
+        <img src={image} alt={title} className="h-full w-full object-cover object-center" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-xl font-bold">{title}</h2>
+        <h2 className="card-title font-playfair tracking-wider">{title}</h2>
         <p className="text-gray-600 text-sm">{description}</p>
         <div className="mt-4 space-y-2">
           <p className="text-sm font-medium">
-            <span>Date:</span> {date}
+            <span className="font-bold">Date:</span> {date}
           </p>
           <p className="text-sm font-medium">
-            <span>Time:</span> {time}
+            <span className="font-bold">Time:</span> {time}
           </p>
           <p className="text-sm font-medium">
-            <span>Location:</span> {location}
+            <span className="font-bold">Location:</span> {location}
           </p>
         </div>
       </div>

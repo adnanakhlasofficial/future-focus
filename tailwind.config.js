@@ -16,6 +16,8 @@ export default {
         'interview': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/interview.webp')",
         'resume': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/resume.webp')",
         'recruitment': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/recruitment.webp')",
+        'services': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/services.jpg')",
+        'events': "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%), url('/img/events.jpg')",
       },
       fontFamily: {
         'playfair': ["Playfair Display", "serif"],

@@ -19,7 +19,7 @@ const Event = () => {
           desc={
             "Discover our latest events designed to empower your career journey. From workshops to conferences, explore opportunities to grow and connect with industry experts."
           }
-          bg={"bg-interview"}
+          bg={"bg-events"}
         ></Banner>
 
         <div className="wrapper grid grid-cols-1 lg:grid-cols-3 gap-6">
