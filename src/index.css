@@ -19,7 +19,7 @@
   }
 }
 
-@layer base {
+@layer utilities {
   .wrapper {
     @apply container mx-auto w-3/4 max-w-[90rem];
   }
@@ -44,4 +44,8 @@
   .footer-desc {
     @apply font-mulish text-base text-gray;
   }
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-primary;
 }

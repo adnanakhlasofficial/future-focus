@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Career Development Workshop",
+    "description": "A hands-on workshop focusing on building resumes, improving interview skills, and networking strategies.",
+    "date": "2024-12-15",
+    "time": "10:00 AM - 2:00 PM",
+    "location": "Future Focus HQ, New York",
+    "image": "https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+  },
+  {
+    "id": 2,
+    "title": "Tech Careers 2024 Conference",
+    "description": "Explore opportunities in technology careers with industry experts and learn about emerging trends.",
+    "date": "2025-01-20",
+    "time": "9:00 AM - 5:00 PM",
+    "location": "Tech Arena, San Francisco",
+    "image": "https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+  },
+  {
+    "id": 3,
+    "title": "Virtual Career Fair",
+    "description": "Join our virtual career fair to connect with top employers and explore job opportunities across various industries.",
+    "date": "2025-02-10",
+    "time": "12:00 PM - 4:00 PM",
+    "location": "Online",
+    "image": "https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+  },
+  {
+    "id": 4,
+    "title": "Leadership Skills Training",
+    "description": "Learn essential leadership skills to grow professionally and advance your career.",
+    "date": "2025-03-05",
+    "time": "1:00 PM - 4:00 PM",
+    "location": "Leadership Center, Chicago",
+    "image": "https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+  },
+  {
+    "id": 5,
+    "title": "Women in STEM Summit",
+    "description": "A summit dedicated to empowering women in science, technology, engineering, and mathematics fields.",
+    "date": "2025-03-25",
+    "time": "8:00 AM - 6:00 PM",
+    "location": "STEM Center, Boston",
+    "image": "https://i.ibb.co.com/wSp6M5n/profile-picture.png"
+  }
+]

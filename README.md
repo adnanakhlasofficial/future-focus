@@ -20,6 +20,8 @@ Future Focus is a comprehensive career counseling platform dedicated to empoweri
 
 - Contact Us: Users can reach out by filling out a contact form on the Contact Us page for any queries or support.
 
+- Events Section: Registered users can explore and participate in upcoming events tailored to their career interests.
+
 
 ## Technology Stack for Gadget Heaven
 

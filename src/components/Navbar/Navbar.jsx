@@ -60,6 +60,16 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "link-active" : "link-deactive"
                 }
+                to="/event"
+              >
+                Events
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "link-active" : "link-deactive"
+                }
                 to="/contact"
               >
                 Contact Us

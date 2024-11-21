@@ -10,6 +10,7 @@ import Error from "../pages/Error/Error";
 import Services from "../pages/Services/Services";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "../pages/Contact/Contact";
+import Event from "../pages/Event/Event";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services></Services>,
         loader: () => fetch("/services.json"),
+      },
+      {
+        path: "/event",
+        element: (
+          <PrivateRoute>
+            <Event></Event>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/events.json"),
       },
       {
         path: "/contact",
