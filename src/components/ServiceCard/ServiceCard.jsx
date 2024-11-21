@@ -31,7 +31,7 @@ const ServiceCard = ({ service }) => {
         <h2 className="card-title font-playfair tracking-wider">
           {serviceName}
         </h2>
-        <p className="text-gray-500 itece flex gap-2 text-sm">
+        <p className="text-gray-500 itece flex gap-2 text-sm bg-primary w-max text-base-300  rounded-full">
           {category} session
         </p>
         <p className="mt-2">{description}</p>

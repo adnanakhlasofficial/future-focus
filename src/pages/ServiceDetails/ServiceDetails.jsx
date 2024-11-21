@@ -5,20 +5,22 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import userIcon from "../../assets/user.svg";
 import { getLocalStorage, setLocalStorage } from "../../utils/localStorage";
 import Swal from "sweetalert2";
+import ReactStars from "react-rating-stars-component";
+
 
 const ServiceDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const [comments, setComments] = useState([]);
-  // const [filterComments, setFilterComments] = useState([])
   const { user } = useContext(AuthContext);
 
   const singleService = data.find((service) => service.id == id);
 
   useEffect(() => {
-    const arr = getLocalStorage()
-    const specificArr = arr.filter(obj => obj.id == id)
-    setComments(specificArr);
+    const arr = getLocalStorage(id);
+    console.log("arr", arr);
+    // const specificArr = arr.filter(obj => obj.id == id)
+    setComments(arr);
   }, [id]);
 
   const {
@@ -42,19 +44,19 @@ const ServiceDetails = () => {
     const details = {
       id: id,
       name: user.displayName,
-      photo: user.photoURL || userIcon, 
-      comment: comment
-    }
+      photo: user.photoURL || userIcon,
+      comment: comment,
+    };
 
     console.log(details);
     const allComments = [...comments, details];
     setComments(allComments);
-    setLocalStorage(allComments);
+    setLocalStorage(id, allComments);
 
     Swal.fire({
       title: "Feedback Submitted",
       text: "Thank you for your feedback! We appreciate your input and will use it to improve our services.",
-      icon: "success"
+      icon: "success",
     });
 
     e.target.feedback.value = "";
@@ -78,9 +80,19 @@ const ServiceDetails = () => {
             />
           </figure>
           <div className="card-body space-y-2">
-            <h2 className="card-title">{serviceName}</h2>
-            <p className="text-gray-500 text-sm">
-              {category} | Rating: ⭐{rating}
+            <h2 className="card-title font-playfair tracking-wider">
+              {serviceName}
+            </h2>
+            <p className="text-gray-500 text-sm flex items-center gap-1">
+              {category} | Rating:{" "}
+              <ReactStars
+                count={5}
+                edit={false}
+                value={rating}
+                size={20}
+                activeColor="#ffd700"
+              />
+              {rating}
             </p>
             <p className="mt-2">{description}</p>
             <p className="mt-2">
@@ -119,7 +131,7 @@ const ServiceDetails = () => {
           {comments.map((detail, idx) => (
             <div
               key={idx}
-              className="flex gap-3 rounded-lg bg-white p-5 shadow-xl"
+              className="flex gap-4 rounded-lg bg-white p-5 shadow-xl"
             >
               <div>
                 <img
@@ -128,7 +140,7 @@ const ServiceDetails = () => {
                   alt=""
                 />
               </div>
-              <div>
+              <div className="space-y-1">
                 <h2 className="font-playfair text-xl font-medium tracking-wider">
                   {detail?.name}
                 </h2>

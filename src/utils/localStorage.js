@@ -1,5 +1,5 @@
-const getLocalStorage = () => {
-  const arrStr = localStorage.getItem("comments");
+const getLocalStorage = (id) => {
+  const arrStr = localStorage.getItem(id);
   const arr = JSON.parse(arrStr);
   if (arr) {
     return arr;
@@ -8,11 +8,9 @@ const getLocalStorage = () => {
   }
 };
 
-const setLocalStorage = (array) => {
-//   const mergeArr = [...getLocalStorage(), array];
-//   console.log(mergeArr)
+const setLocalStorage = (id, array) => {
   const arrStr = JSON.stringify(array);
-  localStorage.setItem("comments", arrStr);
+  localStorage.setItem(id, arrStr);
 };
 
 export { setLocalStorage, getLocalStorage };

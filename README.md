@@ -22,6 +22,8 @@ Future Focus is a comprehensive career counseling platform dedicated to empoweri
 
 - Events Section: Registered users can explore and participate in upcoming events tailored to their career interests.
 
+- Local Storage: Service feedback stored in local storage for future reference
+
 
 ## Technology Stack for Gadget Heaven
 
