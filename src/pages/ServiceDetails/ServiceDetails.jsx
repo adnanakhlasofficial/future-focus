@@ -1,16 +1,25 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import userIcon from "../../assets/user.svg";
+import { getLocalStorage, setLocalStorage } from "../../utils/localStorage";
+import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const [comments, setComments] = useState([]);
+  // const [filterComments, setFilterComments] = useState([])
   const { user } = useContext(AuthContext);
 
   const singleService = data.find((service) => service.id == id);
+
+  useEffect(() => {
+    const arr = getLocalStorage()
+    const specificArr = arr.filter(obj => obj.id == id)
+    setComments(specificArr);
+  }, [id]);
 
   const {
     image,
@@ -28,13 +37,30 @@ const ServiceDetails = () => {
 
   const handleFeedback = (e) => {
     e.preventDefault();
-
     const comment = e.target.feedback.value;
-    const allComments = [...comments, comment];
+
+    const details = {
+      id: id,
+      name: user.displayName,
+      photo: user.photoURL || userIcon, 
+      comment: comment
+    }
+
+    console.log(details);
+    const allComments = [...comments, details];
     setComments(allComments);
+    setLocalStorage(allComments);
+
+    Swal.fire({
+      title: "Feedback Submitted",
+      text: "Thank you for your feedback! We appreciate your input and will use it to improve our services.",
+      icon: "success"
+    });
 
     e.target.feedback.value = "";
   };
+
+  console.log(comments);
 
   return (
     <HelmetProvider>
@@ -90,7 +116,7 @@ const ServiceDetails = () => {
         </div>
 
         <div className="grid w-full max-w-3xl grid-cols-1 gap-4 lg:grid-cols-2">
-          {comments.map((comment, idx) => (
+          {comments.map((detail, idx) => (
             <div
               key={idx}
               className="flex gap-3 rounded-lg bg-white p-5 shadow-xl"
@@ -98,15 +124,15 @@ const ServiceDetails = () => {
               <div>
                 <img
                   className="h-10 w-10 rounded-full object-cover object-center"
-                  src={user?.photoURL ? user?.photoURL : userIcon}
+                  src={detail?.photo}
                   alt=""
                 />
               </div>
               <div>
                 <h2 className="font-playfair text-xl font-medium tracking-wider">
-                  {user.displayName}
+                  {detail?.name}
                 </h2>
-                <p className="font-mulish">{comment}</p>
+                <p className="font-mulish">{detail?.comment}</p>
               </div>
             </div>
           ))}

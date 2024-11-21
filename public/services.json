@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://i.ibb.co.com/VJpmkxv/women2.jpg",
+    "image": "https://i.ibb.co.com/MRs48hb/woman2.jpg",
     "serviceName": "Career Counseling Sessions",
     "category": "Online",
     "description": "One-on-one counseling sessions to help you choose the right career path based on your strengths and interests.",
@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "image": "https://i.ibb.co.com/CBTTg7k/man1.jpg",
+    "image": "https://i.ibb.co.com/X7dVcQs/man1.jpg",
     "serviceName": "Resume Review",
     "category": "Offline",
     "description": "Professional review of your resume to align with industry standards and attract recruiters.",
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "image": "https://i.ibb.co.com/pZF1P53/women1.jpg",
+    "image": "https://i.ibb.co.com/sqjcgLG/woman1.jpg",
     "serviceName": "Skills Assessment Workshop",
     "category": "Group",
     "description": "Interactive workshop to identify key skills and align them with career opportunities.",
@@ -46,7 +46,7 @@
   },
   {
     "id": 4,
-    "image": "https://i.ibb.co.com/pK4kFh9/woman3.jpg",
+    "image": "https://i.ibb.co.com/G9fxDGf/woman3.jpg",
     "serviceName": "College Application Guidance",
     "category": "Online",
     "description": "Personalized support for applying to colleges, including essay reviews and application strategy.",
@@ -61,7 +61,7 @@
   },
   {
     "id": 5,
-    "image": "https://i.ibb.co.com/fHxFCDH/man2.jpg",
+    "image": "https://i.ibb.co.com/hfzJMFd/man2.jpg",
     "serviceName": "Mock Interview Sessions",
     "category": "Offline",
     "description": "Simulated interviews to prepare for job placements, complete with feedback and tips.",
@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "image": "https://i.ibb.co.com/pK4kFh9/woman3.jpg",
+    "image": "https://i.ibb.co.com/CKpbX1L/man3.jpg",
     "serviceName": "Networking Skills Workshop",
     "category": "Group",
     "description": "Learn effective strategies for building professional relationships and expanding your network.",
@@ -91,7 +91,7 @@
   },
   {
     "id": 7,
-    "image": "https://i.ibb.co.com/VJpmkxv/women2.jpg",
+    "image": "https://i.ibb.co.com/T4FKgXz/woman4.jpg",
     "serviceName": "Goal Setting Sessions",
     "category": "Online",
     "description": "Identify short-term and long-term goals with personalized strategies to achieve them.",
@@ -106,7 +106,7 @@
   },
   {
     "id": 8,
-    "image": "https://i.ibb.co.com/KXNzfm0/man4.jpg",
+    "image": "https://i.ibb.co.com/pZ7qMWw/man4.jpg",
     "serviceName": "Career Fair Preparation",
     "category": "Group",
     "description": "Comprehensive guidance to make the most out of career fairs, including networking strategies.",
@@ -121,7 +121,7 @@
   },
   {
     "id": 9,
-    "image": "https://i.ibb.co.com/fHxFCDH/man2.jpg",
+    "image": "https://i.ibb.co.com/DMt0459/man6.jpg",
     "serviceName": "Career Change Counseling",
     "category": "Online",
     "description": "Expert advice to navigate a smooth transition to a new career.",
@@ -136,7 +136,7 @@
   },
   {
     "id": 10,
-    "image": "https://i.ibb.co.com/pK4kFh9/woman3.jpg",
+    "image": "https://i.ibb.co.com/VTWDjPN/woman8.jpg",
     "serviceName": "Leadership Development Program",
     "category": "Group",
     "description": "A program to develop leadership skills and prepare for managerial roles.",
@@ -151,7 +151,7 @@
   },
   {
     "id": 11,
-    "image": "https://i.ibb.co.com/VJpmkxv/women2.jpg",
+    "image": "https://i.ibb.co.com/7b8mp9j/woman7.jpg",
     "serviceName": "Confidence Building Workshop",
     "category": "Offline",
     "description": "A workshop to boost confidence and prepare for public speaking.",
@@ -166,7 +166,7 @@
   },
   {
     "id": 12,
-    "image": "https://i.ibb.co.com/yhfB3HT/man3.jpg",
+    "image": "https://i.ibb.co.com/kQmXkNn/man5.jpg",
     "serviceName": "Aptitude Test Preparation",
     "category": "Online",
     "description": "Prepare for aptitude tests with guidance from experts.",
@@ -181,32 +181,32 @@
   },
   {
     "id": 13,
-    "image": "https://i.ibb.co.com/pK4kFh9/woman3.jpg",
-    "serviceName": "Personal Branding Masterclass",
+    "image": "https://i.ibb.co.com/jRrZvSL/woman5.jpg",
+    "serviceName": "Mindfulness for Career Growth",
     "category": "Online",
-    "description": "Learn to create a strong personal brand and professional identity.",
-    "pricing": "$60 per session",
-    "duration": "05-01-25 5-7pm",
-    "counselor": "Ms. Mia Allen",
+    "description": "Learn mindfulness techniques to enhance focus and career growth.",
+    "pricing": "$30 per session",
+    "duration": "05-01-25 9-10am",
+    "counselor": "Ms. Emma Lopez",
     "rating": 4.8,
-    "learnMore": "https://example.com/services/personal-branding",
-    "location": "Virtual (Webex)",
-    "ageGroup": "20+ years",
-    "skillsCovered": ["Brand building", "Social media presence"]
+    "learnMore": "https://example.com/services/mindfulness",
+    "location": "Virtual (Google Meet)",
+    "ageGroup": "16+ years",
+    "skillsCovered": ["Mindfulness", "Stress management"]
   },
   {
     "id": 14,
-    "image": "https://i.ibb.co.com/CBTTg7k/man1.jpg",
-    "serviceName": "Entrepreneurship Mentoring",
+    "image": "https://i.ibb.co.com/XJJVLCk/woman6.jpg",
+    "serviceName": "Goal Planning Coaching",
     "category": "Group",
-    "description": "A mentoring program for aspiring entrepreneurs.",
-    "pricing": "$200 per program",
-    "duration": "08-01-25 11am-3pm",
-    "counselor": "Dr. Henry Davis",
-    "rating": 4.9,
-    "learnMore": "https://example.com/services/entrepreneurship-mentoring",
-    "location": "Virtual (Google Meet)",
-    "ageGroup": "18-40 years",
-    "skillsCovered": ["Business planning", "Startup strategies"]
+    "description": "Plan your yearly and long-term goals for success.",
+    "pricing": "$60 per session",
+    "duration": "06-01-25 3-4pm",
+    "counselor": "Mr. Liam Davis",
+    "rating": 4.5,
+    "learnMore": "....more",
+    "location": "Virtual",
+    "ageGroup": "18-35 years",
+    "skillsCovered": ["Strategy planning"]
   }
 ]

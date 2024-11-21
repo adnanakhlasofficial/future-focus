@@ -55,16 +55,18 @@ const Navbar = () => {
                 Services
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "link-active" : "link-deactive"
-                }
-                to="/event"
-              >
-                Events
-              </NavLink>
-            </li>
+            {user && user?.email && (
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "link-active" : "link-deactive"
+                  }
+                  to="/event"
+                >
+                  Events
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 className={({ isActive }) =>
@@ -92,14 +94,18 @@ const Navbar = () => {
         <div className="flex items-center gap-4 lg:self-center lg:justify-self-end">
           {user && user?.email && (
             <div className="flex items-center gap-3">
-              <h2 className="text-center font-bold">{user?.displayName}</h2>
-              <Link to="/profile">
-                <img
-                  className="h-10 w-10 rounded-full object-cover object-center ring ring-primary ring-offset-2"
-                  src={user && user?.photoURL ? user?.photoURL : userIcon}
-                  alt=""
-                />
-              </Link>
+              <div className="group relative">
+                <span className="absolute -bottom-12 left-1/2 z-20 hidden w-max -translate-x-1/2 rounded-md bg-primary px-2 py-1 text-white transition-all duration-300 after:absolute after:-top-3 after:left-1/2 after:inline-block after:h-3 after:w-3 after:-translate-x-1/2 after:border-b-[10px] after:border-l-8 after:border-r-8 after:border-b-primary after:border-l-transparent after:border-r-transparent after:content-[''] group-hover:inline">
+                  {user?.displayName}
+                </span>
+                <Link to="/profile">
+                  <img
+                    className="h-10 w-10 rounded-full object-cover object-center ring ring-primary ring-offset-2"
+                    src={user && user?.photoURL ? user?.photoURL : userIcon}
+                    alt=""
+                  />
+                </Link>
+              </div>
             </div>
           )}
           {user && user?.email ? (

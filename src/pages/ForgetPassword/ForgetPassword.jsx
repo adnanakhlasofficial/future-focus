@@ -20,6 +20,7 @@ const ForgetPassword = () => {
           title: "Password reset email sent!",
           icon: "success",
         });
+        window.open('https://www.gmail.com', '_blank');
       })
       .catch((error) => {
         Swal.fire({
@@ -53,7 +54,7 @@ const ForgetPassword = () => {
             </div>
 
             <div>
-              <button className="btn-main w-full text-center">Reset</button>
+              <button className="btn-main w-full block text-center">Reset</button>
             </div>
           </form>
         </div>
