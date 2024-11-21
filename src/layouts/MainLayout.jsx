@@ -20,8 +20,6 @@ const MainLayout = () => {
     };
   }, []);
 
-  console.log(scroll);
-
   if (loading) return <Loading></Loading>;
 
   return (

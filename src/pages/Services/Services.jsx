@@ -5,7 +5,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Services = () => {
   const data = useLoaderData();
-  console.log(data);
 
   return (
     <HelmetProvider>

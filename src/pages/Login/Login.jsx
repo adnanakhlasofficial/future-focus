@@ -13,8 +13,6 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log(location?.state?.from?.pathname);
-
   if (user)
     return (
       <Navigate
@@ -50,8 +48,8 @@ const Login = () => {
       .catch((error) => {
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: error.code,
+          title: "Invalid Credentials",
+          text: error.code == "auth/invalid-credential" && "The credentials you entered are not valid. Please verify your email and password, then try again.",
         });
         setLoading(false);
       });
@@ -71,7 +69,6 @@ const Login = () => {
             ? location?.state?.from?.pathname
             : "/",
         );
-        // console.log("state", state);
       })
       .catch((error) => {
         alert(error.code);

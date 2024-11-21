@@ -15,8 +15,6 @@ const MyProfile = () => {
     const displayName = form.get("name");
     const photoURL = form.get("photo-url");
 
-    console.log({ displayName, photoURL });
-
     if (!displayName && !photoURL) {
       return alert("Fill the field");
     }

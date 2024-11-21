@@ -12,7 +12,7 @@
     @apply rounded-lg border-2 border-primary px-4 py-2 font-mulish font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-slate-100;
   }
   .link-deactive {
-    @apply font-semibold text-gray after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 after:content-[''] hover:text-primary after:hover:w-full;
+    @apply font-bold text-gray after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 after:content-[''] hover:text-primary after:hover:w-full;
   }
   .link-active {
     @apply font-bold text-primary underline decoration-primary decoration-2 underline-offset-4;

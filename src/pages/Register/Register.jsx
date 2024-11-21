@@ -17,6 +17,7 @@ const Register = () => {
   } = useContext(AuthContext);
 
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordTest, setPasswordTest] = useState(true);
 
   const navigate = useNavigate();
 
@@ -33,11 +34,24 @@ const Register = () => {
     const passsword = form.get("password");
     const confirmPassword = form.get("confirm-password");
 
-    console.log({ displayName, photoURL, email, passsword, confirmPassword });
+    if (passsword !== confirmPassword) {
+      return Swal.fire({
+        icon: "error",
+        title: "Passwords Do Not Match",
+        text: "The passwords you entered do not match. Please try again.",
+      });
+    }
 
-    if (passsword !== confirmPassword) return alert("Password doesn't match.");
-    if (!passwordRegex.test(passsword))
-      return alert("Password validation dont match");
+    if (!passwordRegex.test(passsword)) {
+      setPasswordTest(false);
+      return Swal.fire({
+        icon: "error",
+        title: "Invalid Password",
+        text: "The password you entered is incorrect. Please check your credentials and try again.",
+      });
+    } else {
+      setPasswordTest(true);
+    }
 
     createNewUser(email, passsword)
       .then(() => {
@@ -52,7 +66,6 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
         Swal.fire({
           icon: "error",
@@ -76,10 +89,13 @@ const Register = () => {
             ? location?.state?.from?.pathname
             : "/",
         );
-        // console.log("state", state);
       })
       .catch((error) => {
-        alert(error.code);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.code,
+        });
       });
   };
 
@@ -151,6 +167,20 @@ const Register = () => {
                 placeholder="Confirm your password"
               />
             </div>
+            {!passwordTest && (
+              <div className="!my-4">
+                <ul className="ml-4 list-disc list-inside text-red-600 font-semibold">
+                  <li>At least 6 characters long.</li>
+                  <li>Contains at least one uppercase letter (A–Z).</li>
+                  <li>Contains at least one lowercase letter (a–z).</li>
+                  <li>Includes at least one digit (0–9).</li>
+                  <li>
+                    Includes at least one special character: @, $, !, %, *, ?,
+                    &, or .
+                  </li>
+                </ul>
+              </div>
+            )}
             <div>
               <button className="btn-main w-full text-center">Register</button>
             </div>

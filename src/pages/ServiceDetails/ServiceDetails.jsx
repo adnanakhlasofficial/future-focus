@@ -31,7 +31,6 @@ const ServiceDetails = () => {
 
     const comment = e.target.feedback.value;
     const allComments = [...comments, comment];
-    console.log(comment);
     setComments(allComments);
 
     e.target.feedback.value = "";

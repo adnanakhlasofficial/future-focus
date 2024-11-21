@@ -1,10 +1,8 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Error = () => {
-  const error = useRouteError();
-  console.log(error);
-
+  
   return (
     <HelmetProvider>
       <Helmet>
