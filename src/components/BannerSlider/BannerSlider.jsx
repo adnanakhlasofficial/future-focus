@@ -7,18 +7,25 @@ import "swiper/css/pagination";
 // import './styles.css';
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Banner from "../Banner/Banner";
 
 const BannerSlider = () => {
   return (
     <>
       <Swiper
-        pagination={{
-          dynamicBullets: true,
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-        modules={[Pagination]}
-        className="mySwiper h-full"
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper cursor-pointer"
       >
         <SwiperSlide>
           <Banner
