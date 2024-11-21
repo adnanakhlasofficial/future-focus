@@ -96,7 +96,7 @@ const Navbar = () => {
           {user && user?.email && (
             <div className="flex items-center gap-3">
               <div className="group relative z-40">
-                <span className="absolute -bottom-12 left-1/2 z-20 w-max -translate-x-1/2 rounded-md bg-primary px-2 py-1 text-white transition-all duration-1000 after:absolute after:-top-3 after:left-1/2 after:inline-block after:h-3 after:w-3 after:-translate-x-1/2 after:border-b-[10px] after:border-l-8 after:border-r-8 after:border-b-primary after:border-l-transparent after:border-r-transparent after:content-[''] -translate-y-64 group-hover:translate-y-1">
+                <span className="hidden lg:inline absolute -bottom-12 left-1/2 z-20 w-max -translate-x-1/2 rounded-md bg-primary px-2 py-1 text-white transition-all duration-500 after:absolute after:-top-3 after:left-1/2 after:inline-block after:h-3 after:w-3 after:-translate-x-1/2 after:border-b-[10px] after:border-l-8 after:border-r-8 after:border-b-primary after:border-l-transparent after:border-r-transparent after:content-[''] -translate-y-64 group-hover:translate-y-1">
                   {user?.displayName}
                 </span>
                 <Link to="/profile">
